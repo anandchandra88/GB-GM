@@ -168,7 +168,7 @@ def count_macro_cycles(smiles_list,smarts_list,tot,probs):
 #################################
 
 
-file_name = '/Users/chandras/datasets/reorg_5631/reorg_5631_train_raw.smi'
+file_name = 'reorg_5631_train_raw.smi'
 #file_name = 'ZINC_first_1000.smi'
 
 elements = ['#5','#6','#7','#8','#9','#14','#15','#16','#17','#35','#53']

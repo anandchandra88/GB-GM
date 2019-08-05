@@ -133,7 +133,7 @@ def scale_p_ring(rxn_smarts_ring_list,p_ring,new_prob_double):
 
 import time
 
-average_size, size_stdev = 23.2, 4.4
+average_size, size_stdev = 30, 10
 p_ring = pickle.load(open('p_ring.p','rb'))
 p_make_ring = p_ring
 rxn_smarts_make_ring = pickle.load(open('rs_make_ring.p','rb'))
@@ -162,6 +162,13 @@ with open('grow1000.smi','w') as file:
       mol_list.append(mol)
       file.write(new_smiles+'\n')
       count += 1
+
+
+print("Writing images to ./images directory ")
+count = 1
+for mol in mol_list:
+  Draw.MolToFile(mol, 'images/'+str(count)+'.png')
+  count += 1
 
  
 t1 = time.time()
