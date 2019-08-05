@@ -3,6 +3,7 @@ code written by Jan H. Jensen 2018
 '''
 from rdkit import Chem
 from rdkit.Chem import AllChem
+from rdkit.Chem import Draw
 import random
 import numpy as np
 import pickle
@@ -147,9 +148,10 @@ p_make_ring = p_ring
 
 t0 = time.time()
 
-smiles = "CC"
+smiles = "c1ccccc1"
 
 mol_list = []
+
 
 with open('grow1000.smi','w') as file:
   count = 1
@@ -157,6 +159,7 @@ with open('grow1000.smi','w') as file:
     mol = generate_mol(smiles,50,average_size,size_stdev)
     if mol:
       new_smiles = Chem.MolToSmiles(mol)
+      mol_list.append(mol)
       file.write(new_smiles+'\n')
       count += 1
 
