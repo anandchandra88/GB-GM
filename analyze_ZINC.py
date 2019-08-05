@@ -11,6 +11,7 @@ import re
 
 def read_file(file_name):
   smiles_list = []
+  print("Reading file ",file_name)
   with open(file_name,'r') as file:
     for smiles in file:
       smiles_list.append(smiles)
@@ -167,7 +168,7 @@ def count_macro_cycles(smiles_list,smarts_list,tot,probs):
 #################################
 
 
-file_name = 'ZINC_first_1000.smi'
+file_name = '/Users/chandras/datasets/reorg_5631/reorg_5631_train_raw.smi'
 
 elements = ['#5','#6','#7','#8','#9','#14','#15','#16','#17','#35','#53']
 bonds = ['-','=','#']
